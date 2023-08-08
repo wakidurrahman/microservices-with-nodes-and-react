@@ -41,3 +41,8 @@ Common Commands:
 - docker search: Search Docker Hub for images
 - docker version: Show the Docker version information
 - docker info: Display system-wide information
+
+
+few commands.
+$ docker run hello-world
+$ docker run busybox echo hi 

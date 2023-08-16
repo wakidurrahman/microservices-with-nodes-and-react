@@ -1,4 +1,4 @@
-# Microservices with Nodejs, Expressjs, MongoDB and Reactjs
+# Microservices with Nodejs, Express.JS, MongoDB and React.JS and Next.JS
 
 Microservices: A microservices architecture is a type of application architecture where the application is developed as a collection of services. It provides the framework to develop, deploy, and maintain microservices architecture diagrams and services independently.
 

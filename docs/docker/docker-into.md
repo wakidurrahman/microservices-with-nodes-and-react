@@ -50,4 +50,17 @@ $ docker run busybox echo hi
 
 ----------
 $ docker create busybox
-$ docker start busybox_id
+$ docker start imageId
+$ docker start -a imageId
+$ docker crate busybox ping google.com
+$ docker logs imageId
+
+------------
+$ docker stop containerId
+$ docker kill containerId
+
+
+-------------
+$ docker exec -it imageId sh
+$ docker run -it busybox sh
+

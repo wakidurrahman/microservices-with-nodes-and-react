@@ -6,3 +6,7 @@
 4. Run image as container
 5. Connect to web app from a browser
 
+
+docker build -t wakidur/simpleweb .
+
+docker run wakidur/simpleweb:latest

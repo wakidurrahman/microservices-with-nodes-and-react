@@ -1,0 +1,16 @@
+{
+  "name": "init-project-001",
+  "version": "0.0.1",
+  "description": "Initial project of Docker and nodejs wep apps",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["Docker"],
+  "author": "Wakidur Rahman",
+  "license": "ISC",
+  "dependencies": {
+    "express": "*"
+  }
+}

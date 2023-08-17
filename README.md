@@ -2,6 +2,22 @@
 
 Microservices: A microservices architecture is a type of application architecture where the application is developed as a collection of services. It provides the framework to develop, deploy, and maintain microservices architecture diagrams and services independently.
 
+## Content of the project.
+
+1. SSH
+2. Performance
+3. Testing
+4. TypeScript
+5. SPA and SSR(Server Side Rendering)
+6. Security
+7. Code Analysis
+8. Sessions + JWT
+9. Cache
+10. Redis
+11. CI/CD
+12. Docker
+13. AWS
+
 ## Using technology.
 
 - Front-End
@@ -30,3 +46,11 @@ Microservices: A microservices architecture is a type of application architectur
 - Configure and scale your services using `Kubernetes Deployments`.
 - Document and enforce `structure constraints` on events shared across microservices
 - Limit access to your APIs using `JWT-based authentication`
+
+
+## Advance topic
+
+1. Advance Node JS Concepts
+2. Docker and Kubernetes
+3. NoSQL/ SQL.
+4. PostgreSQL.

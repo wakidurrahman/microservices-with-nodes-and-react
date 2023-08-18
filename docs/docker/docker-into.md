@@ -64,3 +64,10 @@ $ docker kill containerId
 $ docker exec -it imageId sh
 $ docker run -it busybox sh
 
+---------------------
+docker build -t wakidur/simpleweb .
+
+docker run wakidur/simpleweb
+docker run -p 8080:8080 wakidur/simpleweb
+docker run -it wakid/todo sh
+

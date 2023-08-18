@@ -5,10 +5,3 @@
 3. Build image from dockerfile
 4. Run image as container
 5. Connect to web app from a browser
-
-
-docker build -t wakidur/simpleweb .
-
-docker run wakidur/simpleweb
-docker run -p 8080:8080 wakidur/simpleweb
-docker run -it wakid/todo sh

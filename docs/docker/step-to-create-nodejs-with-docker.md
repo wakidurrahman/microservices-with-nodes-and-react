@@ -9,4 +9,6 @@
 
 docker build -t wakidur/simpleweb .
 
-docker run wakidur/simpleweb:latest
+docker run wakidur/simpleweb
+docker run -p 8080:8080 wakidur/simpleweb
+docker run -it wakid/todo sh

@@ -11,7 +11,7 @@ app.use(bodyParser.json());
 // CORS  instantiated.
 app.use(cors());
 
-// Store dummy posts for temporary check
+// Store dummy posts for temporary
 const PostsStore = {};
 // Posts PORT
 const port = 4000;

@@ -2,7 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const axios = require('axios');
 
-const AUTH_TOKEN = 'AutoToken';
+// const AUTH_TOKEN = 'AutoToken';
 
 // // Global axios defaults
 // axios.defaults.baseURL = 'http://localhost:4003/events';
@@ -16,9 +16,9 @@ const AUTH_TOKEN = 'AutoToken';
 const app = express();
 // BodyParser  instantiated.
 app.use(bodyParser.json());
-
+// Posts PORT
+const port = 4005;
 // Store all Events for temporary
-
 const EventsStore = [];
 
 app.post('/events', (req, res) => {
@@ -28,4 +28,35 @@ app.post('/events', (req, res) => {
   axios.post('http://localhost:4000/events', EventsStore).catch((err) => {
     console.log(err.message);
   });
+  axios.post('http://localhost:4001/events', EventsStore).catch((err) => {
+    console.log(err.message);
+  });
+  axios.post('http://localhost:4002/events', EventsStore).catch((err) => {
+    console.log(err.message);
+  });
+  axios.post('http://localhost:4003/events', EventsStore).catch((err) => {
+    console.log(err.message);
+  });
+
+  res.status(201).json({
+    // JSend envelope data
+    status: 'success',
+    message: 'Event-Bus work successfully',
+    data: {},
+  });
+});
+
+// Get All Events
+app.get('/events', (req, res) => {
+    res.status(200).json({
+      // JSend envelope data
+      status: 'success',
+      message: 'All events get successfully',
+      data: EventsStore,
+    });
+  });
+
+// Expose Port
+app.listen(port, () => {
+  console.log(`Posts Apps listening on port ${port}`);
 });

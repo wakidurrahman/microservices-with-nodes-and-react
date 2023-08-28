@@ -11,14 +11,13 @@ app.use(bodyParser.json());
 // CORS  instantiated.
 app.use(cors());
 
-// Store dummy posts for temporary check
+// Store dummy posts for temporary
 const PostsStore = {};
 // Posts PORT
 const port = 4000;
 
 // Get All Posts
 app.get('/posts', (req, res) => {
-  console.log(req);
   res.status(200).json({
     // JSend envelope data
     status: 'success',
@@ -28,11 +27,18 @@ app.get('/posts', (req, res) => {
 });
 
 // Create post
-app.post('/posts', (req, res) => {
+app.post('/posts', async (req, res) => {
   // Create dynamic random id
   const id = randomBytes(4).toString('hex');
   const { title } = req.body;
   PostsStore[id] = { id, title };
+
+  // Send to event-bus
+  await axios.post('http://localhost:4005/events', {
+    type: 'PostCreated',
+    date: {id, title},
+  });
+  
   res.status(201).json({
     // JSend envelope data
     status: 'success',
@@ -41,14 +47,15 @@ app.post('/posts', (req, res) => {
   });
 });
 
-// Events
+// Events (This request come from event-bus)
 
 app.post('/events', (req, res) => {
+  const event = req.body;
   console.log('Received Event', req.body.type);
   res.status(201).json({
     status: 'success',
     message: 'Received Even successfully',
-    data: req.body.type,
+    data: event,
   });
 });
 

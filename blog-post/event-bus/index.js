@@ -56,7 +56,7 @@ app.get('/events', (req, res) => {
     });
   });
 
-// Expose Port
+// Expose Event Service
 app.listen(port, () => {
-  console.log(`Posts Apps listening on port ${port}`);
+  console.log(`Event-Bus Apps listening on port ${port}`);
 });

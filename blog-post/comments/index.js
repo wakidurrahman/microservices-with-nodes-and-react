@@ -29,19 +29,20 @@ app.get('/posts/:id/comments', (req, res) => {
 app.post('/posts/:id/comments', async (req, res) => {
   // Create dynamic random id
   const commentId = randomBytes(4).toString('hex');
+  // Get post id from route parameter.
   const postId = req.params.id;
   const { content } = req.body;
   const comments = CommentsByPostIdStore[postId] || [];
-  comments.push({ id: commentId, content, commentStatus: 'pending' });
+  comments.push({ commentId, content, commentStatus: 'pending' });
   CommentsByPostIdStore[postId] = comments;
 
   // Send request to Event bus
   await axios.post('http://localhost:4005/events', {
     type: 'CommentCreated',
     data: {
-      id: commentId,
-      content,
+      commentId,
       postId,
+      content,
       commentStatus: 'pending',
     },
   });
@@ -53,20 +54,29 @@ app.post('/posts/:id/comments', async (req, res) => {
   });
 });
 
-
 app.post('/events', async (req, res) => {
-  console.log("Event Received: ", req.body.type);
+  console.log('Event Received: ', req.body.type);
 
-  const { type, data} = req.body;
+  const { type, data } = req.body;
 
   if (type === 'CommentModerated') {
-    const {postId, id, commentStatus, content} = data;
+    const { postId, commentId, commentStatus, content } = data;
     const comments = CommentsByPostIdStore[postId];
-    const comment = comments.find(comment => comment.id === id);
-    comment.status = commentStatus;
+    const comment = comments.find((comment) => comment.commentId === commentId);
+    comment.commentStatus = commentStatus;
+
+    await axios.post('http://localhost:4005/events', {
+      type: 'CommentUpdated',
+      data: { commentId, commentStatus, postId, content },
+    });
   }
 
-
+  res.status(201).json({
+    // JSend envelope data
+    status: 'success',
+    message: 'Comment Updated  successfully',
+    data: {},
+  });
 });
 
 // Expose Port

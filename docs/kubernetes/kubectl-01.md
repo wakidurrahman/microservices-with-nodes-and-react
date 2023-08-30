@@ -15,3 +15,6 @@ Deployment
 Service 
  - Provides an easy-to-remember URL to access a running container.
 
+
+## command
+$ kubectl apply -f posts.yaml

@@ -7,3 +7,6 @@
 - $ docker ps //*Print out information about all of the running containers*/
 - $ docker exect -it "container id" "cmd" /*Execute the given command in a running container*/
 - $ docker logs "container id" /*Print out logs from the given container*/
+
+
+- $ docker build -t wakidur/posts:0.0.1 .

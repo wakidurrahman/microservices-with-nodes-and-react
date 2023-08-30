@@ -29,21 +29,21 @@ app.get('/posts', (req, res) => {
 // Create post
 app.post('/posts', async (req, res) => {
   // Create dynamic random id
-  const id = randomBytes(4).toString('hex');
+  const postId = randomBytes(4).toString('hex');
   const { title } = req.body;
-  PostsStore[id] = { id, title };
+  PostsStore[postId] = { postId, title };
 
   // Send to event-bus
   await axios.post('http://localhost:4005/events', {
     type: 'PostCreated',
-    date: {id, title},
+    date: {postId, title},
   });
   
   res.status(201).json({
     // JSend envelope data
     status: 'success',
     message: 'Posts created successfully',
-    data: PostsStore[id],
+    data: PostsStore[postId],
   });
 });
 

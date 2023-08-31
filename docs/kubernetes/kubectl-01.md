@@ -23,9 +23,15 @@ Service
 A deployment is a Kubernetes object that is intended to manage a set of pods, so it might be just one
 
 ## Updating the image using by a Deployment
+
 1. The deployment must be uisng the 'latest' tag in the pod spec section
 2. Make an update to your code
 3. Build the image
 4. Push the image to docker hub
 5. Run the command
 `$ kubectl rollout restart deployment [depl_name]`
+
+
+## service 
+`$ kubectl get service`
+`$ kubectl describe service [service name]`

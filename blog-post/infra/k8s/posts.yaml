@@ -1,8 +1,16 @@
+# K8s is extensible - we can in our own custom objects. This specifies the set of objects we want k8s to look at
 apiVersion: v1
+# The type of object we want to create
 kind: Pod
+# Config options for the object we are about to create
 metadata:
+  # When the pod is created, give it a name of 'posts'
   name: posts
+# The exact attributes we want to apply to the object we are about to create
 spec:
+  # We can create many containers in a single pod
   containers:
+    # Make a container with a name of 'posts'
     - name: posts
+      # The exact image we want to use
       image: wakid/posts:0.0.1

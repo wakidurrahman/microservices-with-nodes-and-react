@@ -17,4 +17,7 @@ Service
 
 
 ## command
-$ kubectl apply -f posts.yaml
+`$ kubectl apply -f posts.yaml`
+
+## Deployment
+A deployment is a Kubernetes object that is intended to manage a set of pods, so it might be just one

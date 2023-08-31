@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: posts
-        image: wakid/posts:0.0.1
+        image: wakid/posts
         resources:
           limits:
             memory: "128Mi"

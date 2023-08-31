@@ -61,5 +61,6 @@ app.post('/events', (req, res) => {
 
 // Expose Port
 app.listen(port, () => {
+  console.log("Deployment version update")
   console.log(`Posts Apps listening on port ${port}`);
 });

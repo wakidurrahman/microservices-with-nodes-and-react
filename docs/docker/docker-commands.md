@@ -10,3 +10,10 @@
 
 
 - $ docker build -t wakidur/posts:0.0.1 .
+
+
+## Push 
+
+1. `$ docker image tag wakidur/event-bus:latest docker.io/wakidur/event-bus:latest`
+
+2. `$ docker image push docker.io/wakidur/event-bus`

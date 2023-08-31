@@ -1,4 +1,4 @@
-# K8s is extensibe - we can in our own custom objects. This specifies the set of objects we want k8s to look at
+# K8s is extensible - we can in our own custom objects. This specifies the set of objects we want k8s to look at
 apiVersion: v1
 # The type of object we want to create
 kind: Pod

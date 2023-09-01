@@ -23,9 +23,12 @@ const EventsStore = [];
 
 app.post('/events', (req, res) => {
   const event = req.body;
+  console.log(evnet);
   EventsStore.push(event);
+  console.log(EventsStore)
 
   axios.post('http://posts-clusterip-servicet:4000/events', EventsStore).catch((err) => {
+    console.log("Error event")
     console.log(err.message);
   });
   /** 

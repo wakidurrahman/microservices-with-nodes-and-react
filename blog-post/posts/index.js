@@ -34,7 +34,7 @@ app.post('/posts', async (req, res) => {
   PostsStore[postId] = { postId, title };
 
   // Send to event-bus
-  await axios.post('http://localhost:4005/events', {
+  await axios.post('http://event-bus-clusterip-service:4005/events', {
     type: 'PostCreated',
     date: {postId, title},
   });
@@ -61,6 +61,6 @@ app.post('/events', (req, res) => {
 
 // Expose Port
 app.listen(port, () => {
-  console.log("Deployment version update")
+  console.log("Event-Bus cluster id port change")
   console.log(`Posts Apps listening on port ${port}`);
 });

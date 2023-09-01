@@ -25,9 +25,10 @@ app.post('/events', (req, res) => {
   const event = req.body;
   EventsStore.push(event);
 
-  axios.post('http://localhost:4000/events', EventsStore).catch((err) => {
+  axios.post('http://posts-clusterip-servicet:4000/events', EventsStore).catch((err) => {
     console.log(err.message);
   });
+  /** 
   axios.post('http://localhost:4001/events', EventsStore).catch((err) => {
     console.log(err.message);
   });
@@ -37,7 +38,7 @@ app.post('/events', (req, res) => {
   axios.post('http://localhost:4003/events', EventsStore).catch((err) => {
     console.log(err.message);
   });
-
+*/
   res.status(201).json({
     // JSend envelope data
     status: 'success',

@@ -14,6 +14,13 @@
 
 ## Push 
 
+
+```
+$ docker image tag rhel-httpd:latest registry-host:5000/myadmin/rhel-httpd:latest
+
+$ docker image push registry-host:5000/myadmin/rhel-httpd:latest
+```
+
 1. `$ docker image tag wakidur/event-bus:latest docker.io/wakidur/event-bus:latest`
 
 2. `$ docker image push docker.io/wakidur/event-bus`

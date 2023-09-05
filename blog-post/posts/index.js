@@ -27,7 +27,7 @@ app.get('/posts', (req, res) => {
 });
 
 // Create post
-app.post('/posts', async (req, res) => {
+app.post('/posts/create', async (req, res) => {
   // Create dynamic random id
   const postId = randomBytes(4).toString('hex');
   const { title } = req.body;

@@ -1,0 +1,41 @@
+apiVersion: skaffold/v4beta6
+kind: Config
+metadata:
+  name: blog-post
+manifests:
+  rawYaml:
+    - infra/k8s/comments-depl.yaml
+    - infra/k8s/event-bus-depl.yaml
+    - infra/k8s/frontend-depl.yaml
+    - infra/k8s/ingress-service.yaml
+    - infra/k8s/moderation-depl.yaml
+    - infra/k8s/posts-depl.yaml
+    - infra/k8s/posts-service.yaml
+    - infra/k8s/query-depl.yaml
+build:
+  artifacts:
+    - image: wakidur/comments
+      context: comments
+      docker:
+        dockerfile: Dockerfile
+    - image: wakidur/event-bus
+      context: event-bus
+      docker:
+        dockerfile: Dockerfile
+    - image: wakidur/frontend
+      context: frontend
+      docker:
+        dockerfile: Dockerfile
+    - image: wakidur/moderation
+      context: moderation
+      docker:
+        dockerfile: Dockerfile
+    - image: wakidur/posts
+      context: posts
+      docker:
+        dockerfile: Dockerfile
+    - image: wakidur/query
+      context: query
+      docker:
+        dockerfile: Dockerfile
+

@@ -25,14 +25,14 @@ spec:
             port: 
               number: 4002
       - pathType: Prefix
-        path: "/posts/*/comments"
+        path: "/posts/?(.*)/comments"
         backend:
           service:
             name: comments-clusterip-service
             port: 
               number: 4001
       - pathType: Prefix
-        path: "/*"
+        path: "/?(.*)"
         backend:
           service:
             name: frontend-clusterip-service

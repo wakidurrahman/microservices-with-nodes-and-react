@@ -13,29 +13,58 @@ manifests:
     - infra/k8s/posts-service.yaml
     - infra/k8s/query-depl.yaml
 build:
+  local:
+    concurrency: 1
+    tryImportMissing: false
+    useDockerCLI: false
+    push: false
   artifacts:
     - image: wakidur/comments
       context: comments
+      sync:
+        manual:
+          - dest: .
+            src: '*.js'
       docker:
         dockerfile: Dockerfile
     - image: wakidur/event-bus
       context: event-bus
+      sync:
+        manual:
+          - dest: .
+            src: '*.js'
       docker:
         dockerfile: Dockerfile
     - image: wakidur/frontend
       context: frontend
+      sync:
+        manual:
+          - dest: .
+            src: 'src/**/*.{js,jsx,ts,tsx}'
       docker:
         dockerfile: Dockerfile
     - image: wakidur/moderation
       context: moderation
+      sync:
+        manual:
+          - dest: .
+            src: '*.js'
       docker:
         dockerfile: Dockerfile
     - image: wakidur/posts
       context: posts
+      sync:
+        manual:
+          - dest: .
+            src: '*.js'
       docker:
         dockerfile: Dockerfile
     - image: wakidur/query
       context: query
+      sync:
+        manual:
+          - dest: .
+            src: '*.js'
       docker:
         dockerfile: Dockerfile
 

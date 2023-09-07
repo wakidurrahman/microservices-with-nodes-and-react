@@ -3,7 +3,7 @@ import express, { Express, Request, Response, urlencoded } from 'express';
 const app: Express = express();
 app.use(json());
 app.use(urlencoded({ extended: true }));
-const port = 3000;
+const port = 5000;
 
 app.get('/api/users/currentuser', (req: Request, res: Response) => {
   res.send('Express + TypeScript Server');

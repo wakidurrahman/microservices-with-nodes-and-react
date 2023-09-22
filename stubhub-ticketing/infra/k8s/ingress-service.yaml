@@ -3,17 +3,25 @@ kind: Ingress
 metadata:
   name: ingress-service
   annotations:
-    spec.ingressClassName: nginx
     nginx.ingress.kubernetes.io/use-regex: "true"
+    cert-manager.io/issuer: "letsencrypt-staging" # Replace this with a production issuer once you've tested it
 spec:
+  tls:
+    - hosts:
+      - stubhub-ticketing.dev
+      # This assumes tls-secret exists and the SSL
+      # certificate contains a CN for foo.bar.com
+      secretName: tls-secret
+  ingressClassName: nginx
   rules:
-    - host: "stubhub-ticketing.dev"
+    - host: stubhub-ticketing.dev
       http:
         paths:
           - path: "/api/users/?(.*)"
             pathType: Prefix
             backend:
+            # This assumes http-svc exists and routes to healthy endpoints
               service:
                 name: auth-clusterip-service
                 port:
-                  number: 5000
+                  number: 3000

@@ -6,7 +6,7 @@ import mongoose from 'mongoose';
 
 import { PasswordService } from '../services/password-sevice';
 // An interface that describes the properties that are required to create a new User
-interface UserAttrs {
+export interface UserAttrs {
   email: string;
   password: string;
 }
@@ -79,12 +79,10 @@ const UserSchema = new mongoose.Schema(
     createdAt: {
       type: Date,
       default: Date.now(),
-      select: false,
     },
     updatedAt: {
       type: Date,
       default: Date.now(),
-      select: false,
     },
   },
   {
@@ -112,11 +110,12 @@ UserSchema.virtual('fullName').get(function () {
 });
 
 UserSchema.virtual('createDate').get(function () {
-  return this.createdAt ? moment(this.createdAt).format('YYYY-MM-DD') : '';
+  return this.createdAt ? moment(this.get("createdAt")).format('YYYY-MM-DD') : '';
 });
 
 UserSchema.virtual('updateDate').get(function () {
-  return this.updatedAt ? moment(this.updatedAt).format('YYYY-MM-DD') : '';
+  console.log(this.updatedAt);
+  return this.updatedAt ? moment(this.get("updatedAt")).format('YYYY-MM-DD') : '';
 });
 
 UserSchema.statics.build = (attrs: UserAttrs) => {

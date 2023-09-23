@@ -1,16 +1,7 @@
 apiVersion: skaffold/v4beta6
 kind: Config
-deploy:
-  kubectl:
-    flags:
-      disableValidation: false
 metadata:
   name: stubhub-ticketing
-manifests:
-  rawYaml:
-    - infra/k8s/auth-depl.yaml
-    - infra/k8s/ingress-service.yaml
-    - infra/k8s/auth-mongo-depl.yaml
 build:
   local:
     concurrency: 1
@@ -25,4 +16,9 @@ build:
       sync:
         manual:
           - dest: .
-            src: 'src/**/*.{ts.js}'
+            src: "src/**/*.ts"
+manifests:
+  rawYaml:
+    - infra/k8s/auth-depl.yaml
+    - infra/k8s/auth-mongo-depl.yaml
+    - infra/k8s/ingress-service.yaml

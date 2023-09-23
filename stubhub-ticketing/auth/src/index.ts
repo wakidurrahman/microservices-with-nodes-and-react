@@ -32,9 +32,9 @@ app.use(errorHandler);
 const start = async () => {
   try {
     {/* ↓↓↓ Mongoose Connect For Local Kubernetes*/}
-    // await mongoose.connect('mongodb://auth-mongo-clusterip-service:27017/auth');
+     await mongoose.connect('mongodb://auth-mongo-clusterip-service:27017/auth');
     {/* ↓↓↓ Mongoose Connect For Local Environment*/}
-     await mongoose.connect('mongodb://localhost:27017/stubhub-ticketing-auth');
+    //await mongoose.connect('mongodb://localhost:27017/stubhub-ticketing-auth');
     console.log('Connected to MongoDb successful');
   } catch (error) {
     console.error(error);

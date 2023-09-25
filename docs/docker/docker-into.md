@@ -45,7 +45,7 @@ Common Commands:
 
 few commands.
 $ docker run hello-world
-$ docker run busybox echo hi 
+$ docker run busybox echo hi there
 
 
 ----------
@@ -61,7 +61,7 @@ $ docker kill containerId
 
 
 -------------
-$ docker exec -it imageId sh
+$ docker exec -it containerId sh
 $ docker run -it busybox sh
 
 ---------------------

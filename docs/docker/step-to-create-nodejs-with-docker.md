@@ -1,3 +1,9 @@
+# Creating a Dockerfile (Flow)
+
+-  step 01: Specify a base Image
+-  step 02: Run some commands to install additional programs
+-  step 03: Specify a command to run on container startup
+
 # Steps to create nodejs web App with docker
 
 1. Create NodeJS web app

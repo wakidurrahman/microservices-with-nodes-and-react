@@ -15,5 +15,5 @@ docker pull: Fetches an image from a registry and saves it to the Docker Host.
 docker run: This tells the Docker Daemon to create a container from an image.
 
 In essence, when you 'pull', the client requests the Docker Daemon to fetch an image from the registry. And when you 'run', the Daemon uses that image to create and run a container.
-
+![Docker architecture](../images/docker-architecture.png)
 ![Architecture Simplified](../images/architectures01.gif)

@@ -1,7 +1,7 @@
 {
   "name": "visits",
   "version": "1.0.0",
-  "description": "Node apps and Redis apps connection ",
+  "description": "Node apps container and Redis apps container connection ",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"

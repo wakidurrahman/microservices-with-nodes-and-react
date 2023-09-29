@@ -1,0 +1,11 @@
+version: '3'
+services:
+  redis-server:
+    image: 'redis:alpine'
+  node-app:
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - '8000:8000'

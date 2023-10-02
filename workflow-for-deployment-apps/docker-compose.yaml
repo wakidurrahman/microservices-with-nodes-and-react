@@ -1,3 +1,4 @@
+# Docker Compose use for development environment setup
 version: '3'
 services:
   web:

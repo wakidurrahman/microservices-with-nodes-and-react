@@ -1,3 +1,4 @@
+# This image only use for production environment setup
 # Build Phase
 FROM node:18-alpine as builder 
 

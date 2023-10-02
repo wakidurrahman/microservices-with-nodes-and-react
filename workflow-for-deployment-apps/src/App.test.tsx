@@ -8,6 +8,6 @@ test('renders learn react link', () => {
 });
 test('renders learn', () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  const headerElement = screen.getByText(/Hello World/i);
+  expect(headerElement).toBeInTheDocument();
 });

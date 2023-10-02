@@ -71,3 +71,8 @@ docker run wakidur/simpleweb
 docker run -p 8080:8080 wakidur/simpleweb
 docker run -it wakid/todo sh
 
+
+Docker Volumes: automatically get changes that we make to uour source code
+----------------------------------------------------------
+$ docker run -p 3000:3000 -v /app/node_modules -v $(pwd):/app <image_id>
+

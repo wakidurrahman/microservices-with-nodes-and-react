@@ -53,6 +53,11 @@ Finally, you will tackle Kubernetes, a production-grade system for managing comp
 - Understand the purpose and theory of Kubernetes
 - Deploy a production-ready Kubernetes Cluster to Google Cloud
 
+
+### This learning section project repository list 
+1. [docker-react-apps-deployment](https://github.com/wakidurrahman/docker-react-apps-deployment)
+
+2. [docker-multi-container-apps](https://github.com/wakidurrahman/docker-multi-container-apps/tree/main)
 # Second Course: Microservices with Nodejs, Express.JS, MongoDB and React.JS and Next.JS
 
 Microservices: A microservices architecture is a type of application architecture where the application is developed as a collection of services. It provides the framework to develop, deploy, and maintain microservices architecture diagrams and services independently.

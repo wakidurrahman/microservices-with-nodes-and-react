@@ -2,6 +2,7 @@ import './App.scss';
 import Gallery from './components/molecules/gallery';
 
 import { AccessAlarm, ThreeDRotation } from '@mui/icons-material';
+import TodoList from './components/molecules/todolist';
 
 type AppProps = {
   id: string;
@@ -22,6 +23,7 @@ const App: React.FC<AppProps> = ({ id }) => (
         <li>Using a Component</li>
       </ol>
     </article>
+    <TodoList>Hedy Lamarr's Todos</TodoList>
     <AccessAlarm />
     <ThreeDRotation color="primary" />
   </div>

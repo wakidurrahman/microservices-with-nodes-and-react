@@ -58,6 +58,8 @@ Finally, you will tackle Kubernetes, a production-grade system for managing comp
 1. [docker-react-apps-deployment](https://github.com/wakidurrahman/docker-react-apps-deployment)
 
 2. [docker-multi-container-apps](https://github.com/wakidurrahman/docker-multi-container-apps/tree/main)
+
+
 # Second Course: Microservices with Nodejs, Express.JS, MongoDB and React.JS and Next.JS
 
 Microservices: A microservices architecture is a type of application architecture where the application is developed as a collection of services. It provides the framework to develop, deploy, and maintain microservices architecture diagrams and services independently.
@@ -114,3 +116,29 @@ Microservices: A microservices architecture is a type of application architectur
 2. Docker and Kubernetes
 3. NoSQL/ SQL.
 4. PostgreSQL.
+
+---
+
+# Go from Junior Developer to Senior Developer. Learn all the technical skills Senior Web Developers know
+
+1. SSH
+3. Performance
+3. React + Redux 
+4. Webpack + Parcel
+5. Node.js + Express
+6. Front End Performance Optimizations
+7. Back End Performance Optimization
+8. Progressive Web Apps
+9. Typescript
+10. Software Testing
+11. Server Side Rendering and Client Side Rendering
+12. Front End Security Optimizations
+13. Back End Security Optimizations
+14. Docker
+15. Redis
+16. Sessions + JWT
+17. Amazon Web Services
+18. Serverless Architecture
+19. Continuous Integration
+20. Continuous Delivery
+21. Continuous Deployment

@@ -1,4 +1,4 @@
-# [Describing the UI]( https://react.dev/learn/describing-the-ui)
+# [Describing the UI](https://react.dev/learn/describing-the-ui)
 
 React is a JavaScript library for rendering user interfaces (UI). UI is built from small units like buttons, text, and images. React lets you combine them into reusable, nestable components.
 
@@ -12,7 +12,6 @@ React is a JavaScript library for rendering user interfaces (UI). UI is built fr
 - How to conditionally render components
 - How to render multiple components at a time
 - How to avoid confusing bugs by keeping components pure
-
 
 ### Your first component
 
@@ -32,11 +31,9 @@ React components are regular JavaScript functions except:
 Their names always begin with a capital letter.
 They return JSX markup.
 
-
 ### Importing and Exporting Components
 
 The magic of components lies in their reusability: you can create components that are composed of other components. But as you nest more and more components, it often makes sense to start splitting them into different files. This lets you keep your files easy to scan and reuse components in more places.
-
 
 ```
 Gallery.js
@@ -62,24 +59,24 @@ export default function Gallery() {
 }
 ```
 
-
 ### Writing Markup with JSX
 
-JSX is a syntax extension for JavaScript that lets you write HTML-like markup inside a JavaScript file. 
+JSX is a syntax extension for JavaScript that lets you write HTML-like markup inside a JavaScript file.
 
 - JSX: Putting markup into JavaScript:
-    Web became more interactive, logic increasingly determined content. JavaScript was in charge of the HTML! This is why in React, rendering logic and markup live together in the same place—components.
+  Web became more interactive, logic increasingly determined content. JavaScript was in charge of the HTML! This is why in React, rendering logic and markup live together in the same place—components.
 
 _**`Note: `**_ JSX and React are two separate things. They’re often used together, but you can use them independently of each other. JSX is a syntax extension, while React is a JavaScript library.
 
-- Converting HTML to JSX 
+- Converting HTML to JSX
 
 **Suppose that you have some (perfectly valid) HTML:**
+
 ```
 <h1>Hedy Lamarr's Todos</h1>
-<img 
-  src="https://i.imgur.com/yXOvdOSs.jpg" 
-  alt="Hedy Lamarr" 
+<img
+  src="https://i.imgur.com/yXOvdOSs.jpg"
+  alt="Hedy Lamarr"
   class="photo"
 >
 <ul>
@@ -106,9 +103,9 @@ export default function TodoList() {
   return (
     // This doesn't quite work!
     <h1>Hedy Lamarr's Todos</h1>
-    <img 
-      src="https://i.imgur.com/yXOvdOSs.jpg" 
-      alt="Hedy Lamarr" 
+    <img
+      src="https://i.imgur.com/yXOvdOSs.jpg"
+      alt="Hedy Lamarr"
       class="photo"
     />
     <ul>
@@ -123,14 +120,14 @@ export default function TodoList() {
 - The Rules of JSX
 
 1. Return a single root element:
-_**To return multiple elements from a component, wrap them with a single parent tag.**_
+   _**To return multiple elements from a component, wrap them with a single parent tag.**_
 
 ```
 <div>
   <h1>Hedy Lamarr's Todos</h1>
-  <img 
-    src="https://i.imgur.com/yXOvdOSs.jpg" 
-    alt="Hedy Lamarr" 
+  <img
+    src="https://i.imgur.com/yXOvdOSs.jpg"
+    alt="Hedy Lamarr"
     class="photo"
   />
   <ul>
@@ -142,9 +139,9 @@ _**To return multiple elements from a component, wrap them with a single parent 
 
 <>
   <h1>Hedy Lamarr's Todos</h1>
-  <img 
-    src="https://i.imgur.com/yXOvdOSs.jpg" 
-    alt="Hedy Lamarr" 
+  <img
+    src="https://i.imgur.com/yXOvdOSs.jpg"
+    alt="Hedy Lamarr"
     class="photo"
   />
   <ul>
@@ -153,7 +150,8 @@ _**To return multiple elements from a component, wrap them with a single parent 
 </>
 ```
 
-_**Deep Dive**:_ Why do multiple JSX tags need to be wrapped? 
+_**Deep Dive**:_ Why do multiple JSX tags need to be wrapped?
+
 > Answer: JSX looks like HTML, but under the hood it is transformed into plain JavaScript objects. You can’t return two objects from a function without wrapping them into an array. This explains why you also can’t return two JSX tags without wrapping them into another tag or a Fragment.
 
 2. Close all the tags
@@ -173,17 +171,100 @@ JSX requires tags to be explicitly closed: self-closing tags like `<img>` must b
 
 JSX turns into JavaScript and attributes written in JSX become keys of JavaScript objects. In your own components, you will often want to read those attributes into variables
 
-
 ```
-<img 
-  src="https://i.imgur.com/yXOvdOSs.jpg" 
-  alt="Hedy Lamarr" 
+<img
+  src="https://i.imgur.com/yXOvdOSs.jpg"
+  alt="Hedy Lamarr"
   className="photo"
 />
 
 ```
 
-_**Pitfall**:_ For historical reasons, aria-* and data-* attributes are written as in HTML with dashes.;
+_**Pitfall**:_ For historical reasons, aria-_ and data-_ attributes are written as in HTML with dashes.;
+
+- Pro-tip: Use a JSX Converter
+
+### JavaScript in JSX with Curly Braces
+
+```
+const avatar = 'https://i.imgur.com/7vQD0fPs.jpg';
+const description = 'Gregorio Y. Zara';
 
 
-- Pro-tip: Use a JSX Converter 
+<img
+  className="avatar"
+  src={avatar}
+  alt={description}
+/>
+
+```
+
+---
+Using curly braces: A window into the JavaScript world 
+```
+const name = 'Gregorio Y. Zara';
+ 
+<h1>{name}'s To Do List</h1>
+
+//Any JavaScript expression will work between curly braces, including function calls like formatDate():
+```
+
+---
+Any JavaScript expression will work between curly braces, including function calls like formatDate():
+
+```
+const today = new Date();
+
+function formatDate(date) {
+  return new Intl.DateTimeFormat(
+    'en-US',
+    { weekday: 'long' }
+  ).format(date);
+}
+
+<h1>To Do List for {formatDate(today)}</h1>
+  
+```
+---
+Using “double curlies”: CSS and other objects in JSX 
+
+```
+ <ul style={{
+    backgroundColor: 'black',
+    color: 'pink'
+  }}>
+    <li>Improve the videophone</li>
+    <li>Prepare aeronautics lectures</li>
+    <li>Work on the alcohol-fuelled engine</li>
+  </ul>
+```
+---
+More fun with JavaScript objects and curly braces 
+
+```
+const person = {
+  name: 'Gregorio Y. Zara',
+  theme: {
+    backgroundColor: 'black',
+    color: 'pink'
+  }
+};
+
+export default function TodoList() {
+  return (
+    <div style={person.theme}>
+      <h1>{person.name}'s Todos</h1>
+      <img
+        className="avatar"
+        src="https://i.imgur.com/7vQD0fPs.jpg"
+        alt="Gregorio Y. Zara"
+      />
+      <ul>
+        <li>Improve the videophone</li>
+        <li>Prepare aeronautics lectures</li>
+        <li>Work on the alcohol-fuelled engine</li>
+      </ul>
+    </div>
+  );
+}
+```

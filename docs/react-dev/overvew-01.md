@@ -268,3 +268,136 @@ export default function TodoList() {
   );
 }
 ```
+
+### Passing Props to a Component
+
+React components use props to communicate with each other. Every parent component can pass some information to its child components by giving them props. Props might remind you of HTML attributes, but you can pass any JavaScript value through them, including objects, arrays, and functions.
+
+- Familiar props 
+
+Props are the information that you pass to a `JSX` tag. For example, `className`, `src`, `alt`, `width`, and `height` are some of the props you can pass to an `<img>`:
+
+```
+<img
+  className="avatar"
+  src="https://i.imgur.com/1bX5QH6.jpg"
+  alt="Lin Lanying"
+  width={100}
+  height={100}
+/>
+```
+
+**Passing props to a component**
+
+```
+Step 1: Pass props to the child component
+
+export default function Profile() {
+  return (
+    <Avatar
+      person={{ name: 'Lin Lanying', imageId: '1bX5QH6' }}
+      size={100}
+    />
+  );
+}
+
+Step 2: Read props inside the child component
+
+// utils.js
+export function getImageUrl(person, size = 's') {
+  return (
+    'https://i.imgur.com/' + person.imageId + size + '.jpg'
+  );
+}
+
+import { getImageUrl } from './utils.js';
+
+function Avatar({ person, size }) {
+  return (
+    <img
+      className="avatar"
+      src={getImageUrl(person)}
+      alt={person.name}
+      width={size}
+      height={size}
+    />
+  );
+}
+
+export default function Profile() {
+  return (
+    <div>
+      <Avatar
+        size={100}
+        person={{ 
+          name: 'Katsuko Saruhashi', 
+          imageId: 'YfeOqp2'
+        }}
+      />
+      <Avatar
+        size={80}
+        person={{
+          name: 'Aklilu Lemma', 
+          imageId: 'OKS67lh'
+        }}
+      />
+      <Avatar
+        size={50}
+        person={{ 
+          name: 'Lin Lanying',
+          imageId: '1bX5QH6'
+        }}
+      />
+    </div>
+  );
+}
+```
+---
+Specifying a default value for a prop
+```
+function Avatar({ person, size = 100 }) {
+  // ...
+}
+```
+The default value is only used if the `size` prop is missing or if you pass `size={undefined}`. But if you pass `size={null}` or `size={0}`, the default value will not be used.
+
+
+---
+Forwarding props with the JSX spread syntax 
+```
+function Profile(props) {
+  return (
+    <div className="card">
+      <Avatar {...props} />
+    </div>
+  );
+}
+```
+---
+Passing JSX as children
+```
+import Avatar from './Avatar.js';
+
+function Card({ children }) {
+  return (
+    <div className="card">
+      {children}
+    </div>
+  );
+}
+
+export default function Profile() {
+  return (
+    <Card>
+      <Avatar
+        size={100}
+        person={{ 
+          name: 'Katsuko Saruhashi',
+          imageId: 'YfeOqp2'
+        }}
+      />
+    </Card>
+  );
+}
+```
+

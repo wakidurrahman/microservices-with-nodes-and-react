@@ -62,9 +62,10 @@ Learning paths are a collection of guides that help you master a particular subj
 
 Discover the possibilities of GitHub Actions by creating your first workflow
 
-1. Overview: [Understanding GitHub Actions](https://docs.github.com/en/actions/learn-github-actions/understanding-github-actions?learn=getting_started&learnProduct=actions)
+---
+---
+[Understanding GitHub Actions](https://docs.github.com/en/actions/learn-github-actions/understanding-github-actions?learn=getting_started&learnProduct=actions)
 
- ###### Understanding GitHub Actions
 
 GitHub Actions is a continuous integration and continuous delivery (CI/CD) platform that allows you to automate your build, test, and deployment pipeline. You can create workflows that build and test every pull request to your repository, or deploy merged pull requests to production.
 
@@ -73,8 +74,10 @@ GitHub Actions is a continuous integration and continuous delivery (CI/CD) platf
 You can configure a GitHub Actions workflow to be triggered when an event occurs in your repository, such as a pull request being opened or an issue being created.
 
 ![workflow](../images//overview-actions-simple.webp)
+---
+1. Workflows: 
 
-- Workflows: A workflow is a configurable automated process that will run one or more jobs. Workflows are defined by a `YAML` file checked in to your repository and will run when `triggered` by an `event` in your `repository`, or they can be triggered `manually`, or at a defined `schedule`.
+A workflow is a configurable automated process that will run one or more jobs. Workflows are defined by a `YAML` file checked in to your repository and will run when `triggered` by an `event` in your `repository`, or they can be triggered `manually`, or at a defined `schedule`.
 
 Workflows are defined in the .github/workflows directory in a repository, and a repository can have multiple workflows, each of which can perform a different set of tasks.
 
@@ -86,8 +89,8 @@ For example, you can have one workflow to
 - another workflow to deploy your application every time a release is created,
 -  and still another workflow that adds a label every time someone opens a new issue.
 
-
-- Events: 
+---
+2.  Events: 
 
 An event is a specific activity in a repository that triggers a workflow run. For example, activity can originate from GitHub when someone creates a pull request, opens an issue, or pushes a commit to a repository. 
 ```
@@ -96,8 +99,8 @@ on:
     branches: [ "main" ]
 ```
 
-
-- Jobs: 
+---
+3. Jobs: 
 
 A job is a set of `steps` in a `workflow` that is executed on the same runner.
 Each step is either a shell script that will be executed, or an action that will be run. 
@@ -107,25 +110,21 @@ jobs:
   build:
    ........
 ```
-
-- Actions:
+---
+4. Actions:
 
 An action is a custom application for the GitHub Actions platform that performs a complex but frequently repeated task. Use an action to help reduce the amount of repetitive code that you write in your workflow files. An action can pull your git repository from GitHub, set up the correct toolchain for your build environment, or set up the authentication to your cloud provider.
 
 You can write your own actions, or you can find actions to use in your workflows in the GitHub Marketplace.
 
-
-- Runners: 
+---
+5.  Runners: 
 
 A runner is a `server` that runs your workflows when they're triggered. Each runner can run a `single` `job` at a time. GitHub provides `Ubuntu Linux`, `Microsoft Windows`, and `macOS` runners to run your workflows; each workflow run executes in a fresh, newly-provisioned virtual machine.
 
-2. How-to guide: Finding and customizing actions
-3. Overview: Essential features of GitHub Actions
-4. Overview: About workflows
-5. How-to guide: Reusing workflows
-6. Overview: Security hardening for GitHub Actions
+---
+---
+[Finding and customizing actions](https://docs.github.com/en/actions/learn-github-actions/finding-and-customizing-actions?learn=getting_started&learnProduct=actions)
 
-##### Create an action
+Actions are the building blocks that power your workflow. A workflow can contain actions created by the community, or you can create your own actions directly within your application's repository. 
 
-
-##### Host your own runners

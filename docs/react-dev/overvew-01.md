@@ -503,3 +503,8 @@ You will often want to display multiple similar components from a collection of 
 ---
 
 ### Keeping Components Pure
+
+Some JavaScript functions are pure. Pure functions only perform a calculation and nothing more. By strictly only writing your components as pure functions, you can avoid an entire class of baffling bugs and unpredictable behavior as your codebase grows.
+
+
+React assumes that every component you write is a pure function. This means that React components you write must always return the same JSX given the same inputs:

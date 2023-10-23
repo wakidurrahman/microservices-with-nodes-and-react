@@ -499,3 +499,12 @@ export default function PackingList() {
 ### Rendering Lists
 
 You will often want to display multiple similar components from a collection of `data`. You can use the `JavaScript array methods` to manipulate an `array` of `data`. On this page, you’ll use `filter()` and `map()` with React to filter and transform your array of data into an array of components.
+
+---
+
+### Keeping Components Pure
+
+Some JavaScript functions are pure. Pure functions only perform a calculation and nothing more. By strictly only writing your components as pure functions, you can avoid an entire class of baffling bugs and unpredictable behavior as your codebase grows.
+
+
+React assumes that every component you write is a pure function. This means that React components you write must always return the same JSX given the same inputs:

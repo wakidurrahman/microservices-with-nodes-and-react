@@ -59,7 +59,7 @@ Finally, you will tackle Kubernetes, a production-grade system for managing comp
 
 2. [docker-multi-container-apps](https://github.com/wakidurrahman/docker-multi-container-apps/tree/main)
 
-
+---
 # Second Course: Microservices with Nodejs, Express.JS, MongoDB and React.JS and Next.JS
 
 Microservices: A microservices architecture is a type of application architecture where the application is developed as a collection of services. It provides the framework to develop, deploy, and maintain microservices architecture diagrams and services independently.
@@ -116,6 +116,12 @@ Microservices: A microservices architecture is a type of application architectur
 2. Docker and Kubernetes
 3. NoSQL/ SQL.
 4. PostgreSQL.
+
+--- 
+# Third course: Docker & Kubernetes: The Practical Guide
+
+Learn Docker, Docker Compose, Multi-Container Projects, Deployment and all about Kubernetes from the ground up!
+
 
 ---
 

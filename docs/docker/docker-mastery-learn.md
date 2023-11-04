@@ -1,0 +1,2 @@
+docker version
+docker info

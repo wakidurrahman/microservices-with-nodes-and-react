@@ -47,3 +47,18 @@ USER node
 COPY . .
 # Run the application.
 CMD node src/index.js
+
+# Run tests when building
+FROM base as test
+ENV NODE_ENV test 
+RUN --mount=type=bind,source=package.json,target=package.json \
+    --mount=type=bind,source=package-lock.json,target=package-lock.json \
+    --mount=type=cache,target=/root/.npm \
+    npm ci --include=dev
+USER node
+COPY . .
+# Instead of using CMD in the test stage, use RUN to run the tests. 
+# The reason is that the CMD instruction runs when the container runs, 
+# and the RUN instruction runs when the image is being built and the build will fail if the tests fail.
+RUN npm run test 
+

@@ -8,7 +8,6 @@
 # database or a cache. For examples, see the Awesome Compose repository:
 # https://github.com/docker/awesome-compose
 
-
 # The commented out section below is an example of how to define a PostgreSQL
 # database that your application can use. `depends_on` tells Docker Compose to
 # start the database before your application. The `db-data` volume persists the
@@ -17,42 +16,50 @@
 # a password of your choosing to it before running `docker-compose up`.
 
 services:
-  server:
-    build:
-      context: .
-    environment:
-      NODE_ENV: production
-      POSTGRES_HOST: db
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD_FILE: /run/secrets/db-password
-      POSTGRES_DB: pgtododb
-    ports:
-      - 3000:3000
-    depends_on:
-      db:
-        condition: service_healthy
-    secrets:
-      - db-password
-  db:
-    image: postgres
-    restart: always
-    user: postgres
-    secrets:
-      - db-password
-    volumes:
-      - db-data:/var/lib/postgresql/data
-    environment:
-      - POSTGRES_DB=pgtododb
-      - POSTGRES_PASSWORD_FILE=/run/secrets/db-password
-    expose:
-      - 5432
-    healthcheck:
-      test: [ "CMD", "pg_isready" ]
-      interval: 10s
-      timeout: 5s
-      retries: 5
+    server:
+        build:
+            context: .
+            # Add the `target: dev` instruction to target the `dev` stage from your multi-stage Dockerfile.
+            target: dev
+        environment:
+            NODE_ENV: production
+            POSTGRES_HOST: db
+            POSTGRES_USER: postgres
+            POSTGRES_PASSWORD_FILE: /run/secrets/db-password
+            POSTGRES_DB: pgtododb
+        ports:
+            - 3000:3000
+            # publish port 9229 for debugging. https://nodejs.org/en/docs/guides/debugging-getting-started
+            - 9229:9229
+        depends_on:
+            db:
+                condition: service_healthy
+        secrets:
+            - db-password
+        # Add a new volume to the server service for the bind mount.
+        # For this application, you'll mount `./src` from your local machine to `/usr/src/app/src` in the container.
+        volumes:
+          - ./src:/usr/src/app/src
+    db:
+        image: postgres
+        restart: always
+        user: postgres
+        secrets:
+            - db-password
+        volumes:
+            - db-data:/var/lib/postgresql/data
+        environment:
+            - POSTGRES_DB=pgtododb
+            - POSTGRES_PASSWORD_FILE=/run/secrets/db-password
+        expose:
+            - 5432
+        healthcheck:
+            test: ['CMD', 'pg_isready']
+            interval: 10s
+            timeout: 5s
+            retries: 5
 volumes:
-  db-data:
+    db-data:
 secrets:
-  db-password:
-    file: db/password.txt
+    db-password:
+        file: db/password.txt

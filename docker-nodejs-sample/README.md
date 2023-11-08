@@ -89,3 +89,14 @@ You can use a bind mount to mount your source code into the container. The conta
 - Update your Dockerfile for development
 
 Rather than creating one Dockerfile for production, and another Dockerfile for development, you can use one multi-stage Dockerfile for both.
+
+
+## Run Node.js tests in a container
+
+In this guide you take a look at running your unit tests in Docker when developing and when building.
+
+> `docker build -t node-docker-image-test --progress=plain --no-cache --target test .`
+
+
+
+## Configure CI/CD for your Node.js application

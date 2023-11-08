@@ -89,3 +89,96 @@ You can use a bind mount to mount your source code into the container. The conta
 - Update your Dockerfile for development
 
 Rather than creating one Dockerfile for production, and another Dockerfile for development, you can use one multi-stage Dockerfile for both.
+
+
+## Run Node.js tests in a container
+
+In this guide you take a look at running your unit tests in Docker when developing and when building.
+
+> `docker build -t node-docker-image-test --progress=plain --no-cache --target test .`
+
+
+
+## Configure CI/CD for your Node.js application
+
+how to set up and use GitHub Actions to build and test your Docker image as well as push it to Docker Hub. You will complete the following steps:
+
+1. Create a new repository on GitHub.
+2. Define the GitHub Actions workflow.
+3. Run the workflow.
+
+***Step 1: Create the repository***
+
+1. Create a new repository on GitHub.
+2. Open the repository `Settings`, and go to `Secrets and variables` > `Actions`.
+3. Create a new secret named `DOCKER_USERNAME` and your Docker ID as value.
+4. Create a new Personal Access Token (PAT) for Docker Hub. You can name this token node-docker.
+5. Add the PAT as a second secret in your GitHub repository, with the name `DOCKERHUB_TOKEN`.
+6. Push your code to the repository you just created.
+
+
+***Step 2: Set up the workflow***
+
+Set up your GitHub Actions workflow for 
+ > Building, 
+ 
+ > Testing, 
+ 
+ > Pushing the image to Docker Hub.
+
+1. Go to your repository on GitHub and then select the `Actions` tab.
+
+2. Select set `up a workflow yourself`. This takes you to a page for creating a new GitHub actions workflow file in your repository, under `.github/workflows/main.yml` by default.
+
+3. In the editor window, copy and paste the following YAML configuration.
+
+```
+name: ci
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      -
+        name: Checkout
+        uses: actions/checkout@v4
+      -
+        name: Login to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+      -
+        name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+      -
+        name: Build and test
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          target: test
+          load: true
+      -
+        name: Build and push
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          push: true
+          target: prod
+          tags: ${{ secrets.DOCKER_USERNAME }}/${{ github.event.repository.name }}:latest
+```
+
+***Step 3: Run the workflow***
+
+Save the workflow file and run the job.
+
+1. Select Commit changes... and push the changes to the main branch. After pushing the commit, the workflow starts automatically.
+
+2. Go to the Actions tab. It displays the workflow. Selecting the workflow shows you the breakdown of all the steps.
+
+3. When the workflow is complete, go to your repositories on Docker Hub. If you see the new repository in that list, it means the GitHub Actions successfully pushed the image to Docker Hub.

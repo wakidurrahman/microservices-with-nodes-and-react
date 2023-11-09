@@ -59,8 +59,9 @@ Here's the Dockerfile used as the starting point for this guide:
 
 FROM node:18-alpine
 WORKDIR /app
-COPY . .
+COPY package.json ./
 RUN npm install
+COPY . .
 CMD ["node", "src/index.js"]
 EXPOSE 3000
 ```
@@ -74,3 +75,10 @@ Here’s what this Dockerfile does:
 4. `COPY . .` : Copies the files in the build context to the working directory in the container.
 5. `RUN npm install`: Downloads the necessary `npm` modules to the container.
 6. `CMD ["node", "src/index.js"]`: Specifies a command to run when the container starts. Starts the server process.
+
+
+## 2. Layers.
+
+The order of Dockerfile instructions matters. A Docker build consists of a series of ordered build instructions. Each instruction in a Dockerfile roughly translates to an image layer. The following diagram illustrates how a Dockerfile translates into a stack of layers in a container image.
+
+![Layers](../images/layers.png)

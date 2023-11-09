@@ -26,3 +26,51 @@ This guide is an introduction and deep-dive into building software with Docker.
 - Cache mounts and bind mounts
 - Software testing
 - Multi-platform builds
+
+
+## 2. Introduction.
+
+From this starting point, the guide illustrates various ways that you can improve how you build the application with Docker.
+
+
+The application
+
+```
+├── docker-nodejs-sample/
+│ ├── spec/
+│ ├── src/
+│ ├── .dockerignore
+│ ├── .gitignore
+│ ├── compose.yaml
+│ ├── Dockerfile
+│ ├── package-lock.json
+│ ├── package.json
+│ └── README.md
+```
+
+
+The Dockerfile
+
+A Dockerfile is a text document in which you define the build steps for your application. You write the Dockerfile in a domain-specific language, called the Dockerfile syntax.
+
+Here's the Dockerfile used as the starting point for this guide:
+```
+# syntax=docker/dockerfile:1
+
+FROM node:18-alpine
+WORKDIR /app
+COPY . .
+RUN npm install
+CMD ["node", "src/index.js"]
+EXPOSE 3000
+```
+
+Here’s what this Dockerfile does:
+
+1. `# syntax=docker/dockerfile:1` : This comment is a Dockerfile parser directive. It specifies which version of the Dockerfile syntax to use. This file uses the dockerfile:1 syntax which is best practice: it ensures that you have access to the latest Docker build features.
+
+2. `FROM node:18-alpine`: The `FROM` instruction uses version `18-alpine` of the `node` official image.
+3. `WORKDIR /src`: Creates the `/src` working directory inside the container.
+4. `COPY . .` : Copies the files in the build context to the working directory in the container.
+5. `RUN npm install`: Downloads the necessary `npm` modules to the container.
+6. `CMD ["node", "src/index.js"]`: Specifies a command to run when the container starts. Starts the server process.

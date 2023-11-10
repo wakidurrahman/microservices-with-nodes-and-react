@@ -90,3 +90,37 @@ There are two main reasons for why you’d want to use multi-stage builds:
 
 - They allow you to run build steps in parallel, making your build pipeline faster and more efficient.
 - They allow you to create a final image with a smaller footprint, containing only what's needed to run your program.
+
+Add stages
+
+```
+# syntax=docker/dockerfile:1
+FROM golang:1.21-alpine
+WORKDIR /src
+COPY go.mod go.sum .
+RUN go mod download
+COPY . .
+RUN go build -o /bin/client ./cmd/client
+RUN go build -o /bin/server ./cmd/server
+
+FROM scratch
+COPY --from=0 /bin/client /bin/server /bin/
+ENTRYPOINT [ "/bin/server" ]
+
+```
+
+Parallelism
+
+You can do that by assigning a name to the stage using the pattern `FROM image AS stage_name. `
+
+This allows you to reference the stage name in a FROM instruction of another stage (FROM stage_name).
+
+```
+FROM node:18.10.0-alpine as base
+...
+...
+
+FROM base as dev 
+```
+
+Build targets

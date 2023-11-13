@@ -126,4 +126,17 @@ FROM base as dev
 Build targets
 
 
-## 4. Mounts
+## 5. Mounts
+
+How to use cache mounts and bind mounts with Docker builds.
+
+
+## 6. Build arguments
+
+Build arguments is a great way to add flexibility to your builds.
+
+```
+ARG GO_VERSION=1.21
+FROM golang:${GO_VERSION}-alpine AS base
+```
+

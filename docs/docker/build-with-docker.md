@@ -140,3 +140,14 @@ ARG GO_VERSION=1.21
 FROM golang:${GO_VERSION}-alpine AS base
 ```
 
+## 7. Build arguments
+
+Did you know that you can use Docker to build your application to standalone binaries? Sometimes, you don’t want to package and distribute your application as a Docker image. Use Docker to build your application, and use exporters to save the output to disk.
+
+The default output format for `docker build` is a container image. That image is automatically loaded to your local image store, where you can run a container from that image, or push it to a registry. Under the hood, this uses the default exporter, called the `docker` exporter.
+
+To export your build results as files instead, you can use the `local` exporter. The `local` exporter saves the filesystem of the build container to the specified directory on the host machine.
+
+```
+docker build --output=. --target=server .
+```

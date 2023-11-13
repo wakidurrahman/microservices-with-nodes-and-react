@@ -151,3 +151,7 @@ To export your build results as files instead, you can use the `local` exporter.
 ```
 docker build --output=. --target=server .
 ```
+
+## 8. Test
+
+ The example in this section focuses on linting, but the same principles apply for other kinds of tests as well, such as unit tests. Code linting is a static analysis of code that helps you detect errors, style violations, and anti-patterns

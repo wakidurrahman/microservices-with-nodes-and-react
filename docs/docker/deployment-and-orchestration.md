@@ -14,7 +14,7 @@ What is `orchestrators`?
 Tools to `manage`, `scale`, and `maintain` containerized applications are called `orchestrators`.
 
 
-Two of the most popular orchestration tools are 
+**Two of the most popular orchestration tools are**
 
 1. Kubernetes
 2. Docker Swarm.

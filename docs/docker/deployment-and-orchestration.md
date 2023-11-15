@@ -107,3 +107,41 @@ spec:
 
 
 In addition to deploying to Kubernetes, we have also described our application as a Kubernetes YAML file. This simple text file contains everything we need to create our application in a running state. We can check it into version control and share it with our colleagues, allowing us to distribute our applications to other clusters (like the testing and production clusters that probably come after our development environments) easily.
+
+
+## Deploy to Swarm 
+
+> *** **Note**: Swarm mode is an advanced feature for managing a cluster of Docker daemons. 
+Use Swarm mode if you intend to use Swarm as a production runtime environment.
+If you're not planning on deploying with Swarm, use Docker Compose instead. If you're developing for a Kubernetes deployment, consider using the integrated Kubernetes feature in Docker Desktop.
+
+***Introduction***
+
+Now that we've demonstrated that the individual components of our application run as stand-alone containers and shown how to deploy it using Kubernetes, let's look at how to arrange for them to be managed by Docker Swarm. Swarm provides many tools for scaling, networking, securing and maintaining your containerized applications, above and beyond the abilities of containers themselves.
+
+In order to validate that our containerized application works well on Swarm, we'll use Docker Desktop's built in Swarm environment right on our development machine to deploy our application, before handing it off to run on a full Swarm cluster in production. The Swarm environment created by Docker Desktop is fully featured, meaning it has all the Swarm features your app will enjoy on a real cluster, accessible from the convenience of your development machine.
+
+**Describe apps using stack files**
+
+Swarm never creates individual containers like we did in the previous step of this tutorial. Instead, 
+
+- all Swarm workloads are scheduled as services, which are scalable groups of containers with added networking features maintained automatically by Swarm. 
+- Furthermore, all Swarm objects can and should be described in manifests called stack files. 
+- These YAML files describe all the components and configurations of your Swarm app, and can be used to easily create and destroy your app in any Swarm environment.
+
+`bb-stack.yaml`
+
+```
+version: '3.7'
+
+services: 
+    bb-app: 
+        image: getting-started
+    ports: 
+        - "8080:8080"
+```
+
+
+> Kubernetes Services and Swarm Services are very different
+
+> Despite the similar name, the two orchestrators mean very different things by the term 'service'. In Swarm, a service provides both scheduling and networking facilities, creating containers and providing tools for routing traffic to them. In Kubernetes, scheduling and networking are handled separately, deployments (or other controllers) handle the scheduling of containers as pods, while services are responsible only for adding networking features to those pods.

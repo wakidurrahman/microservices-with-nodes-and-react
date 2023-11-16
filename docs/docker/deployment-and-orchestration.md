@@ -145,3 +145,20 @@ services:
 > Kubernetes Services and Swarm Services are very different
 
 > Despite the similar name, the two orchestrators mean very different things by the term 'service'. In Swarm, a service provides both scheduling and networking facilities, creating containers and providing tools for routing traffic to them. In Kubernetes, scheduling and networking are handled separately, deployments (or other controllers) handle the scheduling of containers as pods, while services are responsible only for adding networking features to those pods.
+
+
+
+## Cloud integrations
+
+1. **Docker and ECS(Amazon Elastic Container Service )**
+---
+
+ ***Overview***
+
+The Docker Compose CLI lets developers use native Docker commands to run applications in Amazon Elastic Container Service (ECS) when building cloud-native applications.
+
+
+The integration between Docker and Amazon ECS allows developers to use the Docker Compose CLI to
+
+- Set up an AWS context in one Docker command, allowing you to switch from a local context to a cloud context and run applications quickly and easily.
+- Simplify multi-container application development on Amazon ECS using Compose files

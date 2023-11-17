@@ -30,6 +30,17 @@ What is an image?
 A running container uses an isolated filesystem. This isolated filesystem is provided by an image, and the image must contain everything needed to run an application - all dependencies, configurations, scripts, binaries, etc. The image also contains other configurations for the container, such as environment variables, a default command to run, and other metadata.
 
 
+Namespacing and Control groups
+These features of namespacing and control groups are specific to the Linux operating system. So namespacing control groups belong to Linux, not to Windows, not to macOS.
+
+
+When you installed Docker for Windows or Docker for Mac you installed a Linux virtual machine. So, so long as Docker up here is running, you technically have a Linux virtual machine running on your computer.
+
+Inside of this virtual machine is where all of these containers are going to be created.
+So inside the virtual machine, we have a Linux kernel, and that Linux kernel is going to be hosting, running processes inside of containers.
+
+And it's that Linux kernel that's going to be in charge of limiting access or kind of constraining access or isolating access to different hardware resources on your computer.
+
 $ docker run hello-world 
 $ docker image hello-world
 $ docker inspect hello-world

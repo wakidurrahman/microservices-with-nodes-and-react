@@ -1,11 +1,11 @@
-# First Course: Docker and Kubernetes The Complete Guideline
+# First Course: Docker and Kubernetes The Complete Guideline (By Stephen Grider)
 
 Build, test, and deploy Docker applications with Kubernetes while learning production-style development workflows
 
 ## Learn Topic
 
-- Learn Docker from scratch, no previous experience required
-- Master the Docker CLI to inspect and debug running containers
+- Learn Docker from scratch, no previous experience required.
+- Master the Docker CLI to inspect and debug running containers.
 - Build a CI/CD pipeline from scratch with Github, Travis CI, and AWS.
 - Understand the purpose and theory of Kubernetes by building a complex app.
 - Automatically deploy your code when it is pushed to Github!
@@ -44,22 +44,26 @@ Finally, you will tackle Kubernetes, a production-grade system for managing comp
 
 ## Here's what you'll do:
 
-- Build your own custom images tailored to your applications
-- Master the Docker CLI to inspect and debug running containers
-- Understand how Docker works behind the scenes, and what a container is
-- Build a CI + CD pipeline from scratch with Github, Travis CI, and AWS
-- Automatically deploy your code when it is pushed to Github!
-- Build a complex multi-container application from scratch and deploy it to AWS
-- Understand the purpose and theory of Kubernetes
-- Deploy a production-ready Kubernetes Cluster to Google Cloud
+- Build your own custom images tailored to your applications.
+- Master the Docker CLI to inspect and debug running containers.
+- Understand how Docker works behind the scenes, and what a container is?
+- Build a `CI + CD` pipeline from scratch with `Github`, `Travis CI`, and `AWS`
+- `Automatically deploy` your code when it is pushed to `Github`!
+- Build a `complex multi-container application` from scratch and deploy it to `AWS`
+- Understand the purpose and `theory of Kubernetes`
+- Deploy a `production-ready Kubernetes` Cluster to Google Cloud
+
+## Who this course is for: Software engineers looking to deploy their apps easily and quickly
 
 
 ### This learning section project repository list 
+
 1. [docker-react-apps-deployment](https://github.com/wakidurrahman/docker-react-apps-deployment)
 
 2. [docker-multi-container-apps](https://github.com/wakidurrahman/docker-multi-container-apps/tree/main)
 
 ---
+
 # Second Course: Microservices with Nodejs, Express.JS, MongoDB and React.JS and Next.JS
 
 Microservices: A microservices architecture is a type of application architecture where the application is developed as a collection of services. It provides the framework to develop, deploy, and maintain microservices architecture diagrams and services independently.

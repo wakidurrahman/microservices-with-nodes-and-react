@@ -1,10 +1,11 @@
 # Section 3: Building Custom Images Through Docker Server
 
 Creating docker image 
-=> Dockerfile
-=> Docker client
-=> Docker server
-=> Usable Image!
+
+`Dockerfile`
+=> `Docker client`
+=> `Docker server`
+=> `Usable Image!`
 
 Creating a Dockerfile
 

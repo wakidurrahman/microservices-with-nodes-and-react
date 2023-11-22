@@ -1,0 +1,11 @@
+# Section 5: Docker Compose with Multiple Local Containers 
+
+Project name : `visits`
+
+```
+ "dependencies": {
+    "express": "^4.18.2",
+    "redis": "^2.8.0"
+  }
+```
+

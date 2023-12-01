@@ -35,4 +35,21 @@ Complete docker-compose.yml file:
 ---
 
 
-## AWS Configuration Cheat Sheet
+## Production
+
+Elastic Beanstalk Instance
+|-- Nginx
+|-- Nginx W/Prod files
+|-- Worker
+|-- Express server
+
+AWS Elastic Cache
+AWS Relational Database Service
+
+AWS VPC's and security group
+
+- Default Virtual Private Cloud (VPC)
+
+- - EB Instance
+- - RDS (Postgres)
+- - EC (Redis)

@@ -62,6 +62,8 @@ Finally, you will tackle Kubernetes, a production-grade system for managing comp
 
 2. [docker-multi-container-apps](https://github.com/wakidurrahman/docker-multi-container-apps/tree/main)
 
+3. [multi-container-apps-with-kubernetes](https://github.com/wakidurrahman/multi-container-apps-with-kubernetes)
+
 ---
 
 # Second Course: Microservices with Nodejs, Express.JS, MongoDB and React.JS and Next.JS
@@ -122,8 +124,12 @@ Microservices: A microservices architecture is a type of application architectur
 4. PostgreSQL.
 ---
 
-# Third course: Docker Mastery: with Kubernetes +Swarm from a Docker Captain
+# Third course: Docker Mastery: with Kubernetes + Swarm from a Docker Captain (Bret Fisher)
 
+## Learn Topic 
+-  Docker
+- Swarm
+- kubernetes
 
 --- 
 # Forth course: Docker & Kubernetes: The Practical Guide

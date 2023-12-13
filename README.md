@@ -20,27 +20,23 @@ Build, test, and deploy Docker applications with Kubernetes while learning produ
 - AWS Deployment?
 - Kubernetes in Production?
 
-This is the ultimate guide to learn how to deploy any web application you can possibly dream up.  Docker and Kubernetes are the newest tech in the Dev Ops world, and have dramatically changed the flow of creating and deploying web apps. Docker is a technology that allows applications to run in constructs called 'containers', while Kubernetes allows for many different 'containers' to run in coordination.
+This is the ultimate guide to learn how to deploy any web application you can possibly dream up. Docker and Kubernetes are the newest tech in the Dev Ops world, and have dramatically changed the flow of creating and deploying web apps. Docker is a technology that allows applications to run in constructs called 'containers', while Kubernetes allows for many different 'containers' to run in coordination.
 
 ## Docker from Scratch!
 
-In this guideline you'll learn Docker from absolute fundamentals, beginning by learning the answer to basic questions such as "What is a container?" and "How does a container work?".  From the very first few topic, we will do a deep dive on the inner workings of containers, so you get a core understanding of exactly how they are implemented.  Once you understand what a container is, you'll learn how to work with them using basic Docker CLI commands.  After that, we'll apply your new-found mastery of the Docker CLI to build your own custom images, effectively 'Dockerizing' your own personal applications.
+In this guideline you'll learn Docker from absolute fundamentals, beginning by learning the answer to basic questions such as "What is a container?" and "How does a container work?". From the very first few topic, we will do a deep dive on the inner workings of containers, so you get a core understanding of exactly how they are implemented. Once you understand what a container is, you'll learn how to work with them using basic Docker CLI commands. After that, we'll apply your new-found mastery of the Docker CLI to build your own custom images, effectively 'Dockerizing' your own personal applications.
 
 ## CI/CD Pipelines
 
-Of course, no guideline on Docker would be complete without a full understanding of common Continuous Integration and Continuous Deployment patterns.  You will learn how to implement a full CI + CD workflow using Github, Travis CI, and Amazon Web Services, creating a pipeline that automatically deploys your code every time you push your latest changes to Github!
+Of course, no guideline on Docker would be complete without a full understanding of common Continuous Integration and Continuous Deployment patterns. You will learn how to implement a full CI + CD workflow using Github, Travis CI, and Amazon Web Services, creating a pipeline that automatically deploys your code every time you push your latest changes to Github!
 
 ## Multi-Container Deployments on AWS!
 
-After building a deployment pipeline, you'll apply it to master both single-container and multi-container deployments on Amazon Web Services.  You will construct a multi-container application utilizing Node, React, Redis, and Postgres, and see the amazing power of containers in action (Note: all Javascript coding in this guideline is optional, the full source code is provided if you don't want to write JS).
-
-
+After building a deployment pipeline, you'll apply it to master both single-container and multi-container deployments on Amazon Web Services. You will construct a multi-container application utilizing Node, React, Redis, and Postgres, and see the amazing power of containers in action (Note: all Javascript coding in this guideline is optional, the full source code is provided if you don't want to write JS).
 
 ## Kubernetes!
 
-Finally, you will tackle Kubernetes, a production-grade system for managing complex applications with many different running containers.  You will learn the right way to build a Kubernetes Cluster - this course doesn't have any of those annoying "don't do this in production" comments!  You will first build a Kubernetes Cluster on your local machine, then eventually move it over to a cloud provider.  You'll even learn how to set up HTTPS on Kubernetes, which is harder than it sounds!
-
-
+Finally, you will tackle Kubernetes, a production-grade system for managing complex applications with many different running containers. You will learn the right way to build a Kubernetes Cluster - this course doesn't have any of those annoying "don't do this in production" comments! You will first build a Kubernetes Cluster on your local machine, then eventually move it over to a cloud provider. You'll even learn how to set up HTTPS on Kubernetes, which is harder than it sounds!
 
 ## Here's what you'll do:
 
@@ -55,8 +51,7 @@ Finally, you will tackle Kubernetes, a production-grade system for managing comp
 
 ## Who this course is for: Software engineers looking to deploy their apps easily and quickly
 
-
-### This learning section project repository list 
+### This learning section project repository list
 
 1. [docker-react-apps-deployment](https://github.com/wakidurrahman/docker-react-apps-deployment)
 
@@ -66,7 +61,42 @@ Finally, you will tackle Kubernetes, a production-grade system for managing comp
 
 ---
 
-# Second Course: Microservices with Nodejs, Express.JS, MongoDB and React.JS and Next.JS
+# Second course: Docker Mastery: with Kubernetes + Swarm from a Docker Captain (Bret Fisher)
+
+## About this course
+
+Build, test, deploy containers on Docker, Kubernetes, Compose, GitHub Actions CI using DevOps
+
+## Description
+
+Docker and Kubernetes in GitHub Actions including vulnerability scanning, advanced image building, multi-platform builds, and more. Production topics around Swarm, Kubernetes, secrets, logging, rolling upgrades, and more.
+
+## Learn Topic
+
+- Docker
+- Swarm
+- kubernetes
+- GitHub Actions CI
+
+## Course outline.
+
+- Edit web code on your machine while it's served up in a container
+- Lock down your apps in `private networks` that only expose necessary ports
+- Create a 3-node `Swarm` cluster in the cloud
+- Install `Kubernetes` and learn the leading server `cluster` tools
+- Use Virtual IP's for built-in load balancing in your cluster
+- Optimize your `Dockerfiles` for faster building and tiny deploys
+- Build/Publish your own custom application `images`
+- Learn the differences between `Kubernetes` and `Swarm`
+- Create your own image `registry`
+- Use `Swarm` `Secrets` to encrypt your environment configs, even on disk
+- Deploy container updates in a rolling always-up design
+- Create the config utopia of a single set of YAML files for local dev, `CI testing`, and prod cluster deploys
+
+
+---
+
+# Third Course: Microservices with Nodejs, Express.JS, MongoDB and React.JS and Next.JS
 
 Microservices: A microservices architecture is a type of application architecture where the application is developed as a collection of services. It provides the framework to develop, deploy, and maintain microservices architecture diagrams and services independently.
 
@@ -91,17 +121,17 @@ Microservices: A microservices architecture is a type of application architectur
 - Front-End
   - ReactJS
   - NextJS
-- Each Service is Created by: 
-    - Nodejs
-    - Express.js
-- Data for each service 
-    - Mongo
-    - Redis
+- Each Service is Created by:
+  - Nodejs
+  - Express.js
+- Data for each service
+  - Mongo
+  - Redis
 - The entire app is deployed and Runs
-    - Docker containers
-    - Executed in a Kubernetes cluster.
+  - Docker containers
+  - Executed in a Kubernetes cluster.
 - And all of the code is written with.
-   - Typescript.
+  - Typescript.
 
 ## Partial list of what I'll do here.
 
@@ -115,35 +145,26 @@ Microservices: A microservices architecture is a type of application architectur
 - Document and enforce `structure constraints` on events shared across microservices
 - Limit access to your APIs using `JWT-based authentication`
 
-
 ## Advance topic
 
 1. Advance Node JS Concepts
 2. Docker and Kubernetes
 3. NoSQL/ SQL.
 4. PostgreSQL.
+
 ---
 
-# Third course: Docker Mastery: with Kubernetes + Swarm from a Docker Captain (Bret Fisher)
-
-## Learn Topic 
--  Docker
-- Swarm
-- kubernetes
-
---- 
 # Forth course: Docker & Kubernetes: The Practical Guide
 
 Learn Docker, Docker Compose, Multi-Container Projects, Deployment and all about Kubernetes from the ground up!
-
 
 ---
 
 # Go from Junior Developer to Senior Developer. Learn all the technical skills Senior Web Developers know
 
 1. SSH
-3. Performance
-3. React + Redux 
+2. Performance
+3. React + Redux
 4. Webpack + Parcel
 5. Node.js + Express
 6. Front End Performance Optimizations

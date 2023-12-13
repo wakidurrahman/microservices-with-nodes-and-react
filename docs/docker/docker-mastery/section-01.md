@@ -1,0 +1,35 @@
+# Section 1: Quick Start!
+
+This is about the three major innovations that started the Docker whole evolution of software in 2013, that is mainly three things.
+
+- The Docker image, that
+- Docker registry, and then the
+- Docker container.
+
+Most of us, when we think of Docker, we think of the container, but these three innovations go together like bread and butter and they call it at Docker build ship run.
+
+CNCF or the (Cloud Native Computing Foundation)
+
+
+just focusing on major features of Linux and now windows that are sort of adopting a lot of these Linux concepts.
+
+=> Major Linux Features used by Docker.
+
+- Namespaces 
+- CGroups
+- Veth:  or virtual Ethernet devices.
+- IPTABLES: is like a firewall and general IP packet, routing and control
+- Union Mount:, which is something that we use for getting the file system with all these layers in it, into the container at start to look like its own unique file system that's isolated from the rest of the host.
+
+## why does Docker need to exist?  Why Docker and why now?
+
+And at the time it was created, there was friction. There was things in the way of us going to the next level of speed and ease of use of the software lifecycle, particularly around `packaging`, `distributing` and `running` all the software we're making.
+
+So this main list of `Isolation`, `Environments` and `Speed`, those three areas are what I want to talk about as the three overall reasons.
+
+I feel like the containers themselves had to exist and why they're so popular today.
+
+### what containers do is they?
+
+Give us the isolation, like a VM. It's not quite the same, but we'll just argue for now that it's an isolation layer, where they get their own `IP address`, they get their own `file system`, they get their own `process space`.  And so it seems like almost a full VM, but you don't need all the `different operating systems` so we can reduce our `operating system` count. Our `physical host` count. You no longer have to use VMs as the layer of `isolation`. 
+

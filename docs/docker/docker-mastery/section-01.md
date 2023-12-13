@@ -33,3 +33,23 @@ I feel like the containers themselves had to exist and why they're so popular to
 
 Give us the isolation, like a VM. It's not quite the same, but we'll just argue for now that it's an isolation layer, where they get their own `IP address`, they get their own `file system`, they get their own `process space`.  And so it seems like almost a full VM, but you don't need all the `different operating systems` so we can reduce our `operating system` count. Our `physical host` count. You no longer have to use VMs as the layer of `isolation`. 
 
+
+# Section 2: Course Introduction
+
+## Course Roadmap (Overview)
+
+1. Getting Requirements
+2. Docker Install
+3. Container Basics
+4. Image Basics
+5. Docker Networking
+6. Docker Volumes
+7. Docker Compose
+8. Orchestration
+9. Docker Swarm
+10. Kubernetes
+11. Swarm vs. K8s
+12. Student Q&A
+13. File Reviews
+14. References Galore
+

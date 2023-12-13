@@ -53,3 +53,7 @@ Give us the isolation, like a VM. It's not quite the same, but we'll just argue 
 13. File Reviews
 14. References Galore
 
+
+# Section 3: The Best Way to Setup Docker for Your OS
+
+

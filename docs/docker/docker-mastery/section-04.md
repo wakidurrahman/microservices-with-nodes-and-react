@@ -115,3 +115,5 @@ Run 'docker COMMAND --help' for more information on a command.
 ## Docker networks 
 
 
+# Section 5: Container Images, Where To Find Them and How To Build Them
+
